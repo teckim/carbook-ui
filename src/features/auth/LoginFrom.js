@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { loginAsync } from './authSlice';
 
 const LoginFrom = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -12,7 +14,8 @@ const LoginFrom = () => {
       username, password,
     };
 
-    dispatch(loginAsync(credencials));
+    dispatch(loginAsync(credencials)).unwrap()
+      .then(() => navigate('/'));
   };
 
   return (
