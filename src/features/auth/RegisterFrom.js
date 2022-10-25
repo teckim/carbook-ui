@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { registerAsync, selectErrors } from './authSlice';
 
 const LoginFrom = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
@@ -16,7 +18,8 @@ const LoginFrom = () => {
       password_confirmation: passwordConfirmation,
     };
 
-    dispatch(registerAsync(user));
+    dispatch(registerAsync(user)).unwrap()
+      .then(() => navigate('/login'));
   };
 
   return (
