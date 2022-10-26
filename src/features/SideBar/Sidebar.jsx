@@ -104,4 +104,20 @@ const Sidebar = () => {
                 Reserve
               </NavLink>
             </li>
-           
+            <li className="nav-item mb-2">
+              <NavLink
+                to="/reservations"
+                className={`${styles.mobileNavLink} nav-link`}
+              >
+                My Reservations
+              </NavLink>
+            </li>
+            <li className="nav-item mb-2">
+              <NavLink
+                to="/add-car"
+                className={`${styles.mobileNavLink} nav-link`}
+              >
+                Add Car
+              </NavLink>
+            </li>
+            
