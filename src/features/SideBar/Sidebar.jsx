@@ -50,9 +50,17 @@ const Sidebar = () => {
                     </span>
                   </NavLink>
                 </li>
-               
-    </>
-  );
-};
+                <li className="w-100">
+                  <NavLink to="/add-car" className="nav-link mb-2 fs-5">
+                    <i className="fa-solid fa-plus me-2" />
+                    <span className="ms-1 d-none d-sm-inline">Add Car</span>
+                  </NavLink>
+                </li>
+                <li className="w-100">
+                  <NavLink to="/delete-car" className="nav-link mb-2 fs-5">
+                    <i className="fa-solid fa-trash-can me-2" />
+                    <span className="ms-1 d-none d-sm-inline">Delete Car</span>
+                  </NavLink>
+                </li>
 
-export default Sidebar;
+               
