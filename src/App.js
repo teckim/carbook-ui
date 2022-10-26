@@ -1,10 +1,13 @@
 import React from 'react';
 import { RouterProvider } from 'react-router-dom';
-import { authRouter } from './app/router';
-import AuthLayout from './features/auth/AuthLayout';
+import { mainRouter } from './app/router';
 
 function App() {
-  return <AuthLayout><RouterProvider router={authRouter} /></AuthLayout>;
+  return (
+    <>
+      <RouterProvider router={mainRouter} />
+    </>
+  );
 }
 
 export default App;
