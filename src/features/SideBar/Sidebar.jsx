@@ -72,4 +72,36 @@ const Sidebar = () => {
                     <i className="fa-solid fa-arrow-right-from-bracket me-2" />
                     Logout
                   </button>
-               
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className={`${styles.mobileMenu} collapse primary-color d-md-none`}
+        id="navbarToggleExternalContent"
+      >
+        <div
+          className="collapse navbar-collapse d-flex flex-column align-items-center"
+          id="navbarTogglerDemo01"
+        >
+          <ul className="navbar-nav d-flex flex-column align-items-center me-auto mt-3 mb-2 mb-lg-0 w-100">
+            <li className="nav-item mb-2">
+              <NavLink
+                to="/home"
+                className={`${styles.mobileNavLink} nav-link`}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item mb-2">
+              <NavLink
+                to={`/reserve/${null}`}
+                className={`${styles.mobileNavLink} nav-link`}
+              >
+                Reserve
+              </NavLink>
+            </li>
+           
