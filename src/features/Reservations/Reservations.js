@@ -1,4 +1,4 @@
-const GET_RESERVATIONS = 'booking-app-frontend/car/GET_RESERVATIONS';
+const GET_RESERVATIONS = 'carbook-ui/car/GET_RESERVATIONS';
 
 // Action Creators
 const reservationsRequest = (data) => ({

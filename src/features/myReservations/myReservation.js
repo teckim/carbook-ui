@@ -1,4 +1,4 @@
-const GET_MY_RESERVATIONS = 'booking-app-frontend/car/GET_MY_RESERVATIONS';
+const GET_MY_RESERVATIONS = 'carbook-ui/car/GET_MY_RESERVATIONS';
 
 const url = 'http://localhost:3000/v1/cars/';
 // Action Creators
