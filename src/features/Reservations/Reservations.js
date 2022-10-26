@@ -1,5 +1,7 @@
 const GET_RESERVATIONS = 'carbook-ui/car/GET_RESERVATIONS';
 
+const url = 'http://localhost:3000/v1/cars/reservations';
+
 // Action Creators
 const reservationsRequest = (data) => ({
   type: GET_RESERVATIONS,
