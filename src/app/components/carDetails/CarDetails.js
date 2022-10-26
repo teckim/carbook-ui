@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { getCarDetails } from '../../../features/car/carDetailsSlice';
+import {
+  retrieveCars,
+  retrieveCar,
+} from '../../../features/car/carDetailsSlice';
 
 const CarDetails = () => {
   const dispatch = useDispatch();
@@ -13,8 +16,9 @@ const CarDetails = () => {
   useEffect(() => {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-    dispatch(getCarDetails(id));
-  }, [dispatch, id]);
+    dispatch(retrieveCars());
+    dispatch(retrieveCar(id));
+  }, [dispatch]);
 
   return (
     <>
