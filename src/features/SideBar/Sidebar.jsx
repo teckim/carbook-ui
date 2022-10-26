@@ -141,4 +141,28 @@ const Sidebar = () => {
           </ul>
         </div>
       </div>
-      
+      <nav className={`${styles.mobileNav} navbar primary-color d-md-none`}>
+        <div className="container-fluid d-flex justify-content-between">
+          <button
+            className={styles.menuBtn}
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent"
+            aria-controls="navbarToggleExternalContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span>
+              <i className="fa-solid fa-bars" />
+            </span>
+          </button>
+          <h1 className={`${styles.brandName} navbar-brand fs-2 fw-semibold`}>
+            CarBook
+          </h1>
+        </div>
+      </nav>
+    </>
+  );
+};
+
+export default Sidebar;
