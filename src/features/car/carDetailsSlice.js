@@ -13,7 +13,7 @@ export const retrieveCar = createAsyncThunk('car/retrieve', async (id) => {
   return res.data;
 });
 
-export const removeCar = createAsyncThunk('cars/delete', async ({ id }) => {
+export const removeCar = createAsyncThunk('car/delete', async ({ id }) => {
   await CarData.remove(id);
   return { id };
 });
