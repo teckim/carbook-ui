@@ -38,11 +38,6 @@ const carDetailsSlice = createSlice({
   name: 'carDetails',
   initialState: [],
 
-  addCar: (state, action) => {
-    state.push(action.payload);
-  },
-  deleteCar: () => {},
-
   extraReducers: {
     [createCar.fulfilled]: (state, action) => {
       state.push(action.payload);
