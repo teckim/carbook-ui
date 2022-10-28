@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { selectIsLoggedIn } from './authSlice';
-import RegisterForm from './RegisterFrom';
+import { selectIsLoggedIn } from '../features/auth/authSlice';
+import RegisterForm from '../features/auth/components/RegisterFrom';
 
 const RegisterPage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

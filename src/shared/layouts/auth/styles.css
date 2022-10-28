@@ -27,6 +27,7 @@
 }
 
 .auth-layout .form .label {
+  display: block;
   color: #3c3c3c;
   font-size: 14px;
 }
@@ -70,4 +71,11 @@
   background-color: #fff;
   color: var(--primry-color);
   box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+}
+
+.auth-layout .auth-footer {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  text-align: center;
 }
