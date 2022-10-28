@@ -15,7 +15,7 @@ function Reserve() {
       <div className="container showcase-inner">
         <h1>Connect with vetted software developer</h1>
         <p className="about">
-          Get me a Car app is built as a capstone project by a group of 4
+          Get me a Car Ride app is built as a capstone project by a group of 4
           microverse talented software developers who want to make the
           engineering world a better place to collaborate. by providing a
           platform to connect experienced and upcoming engineering.
