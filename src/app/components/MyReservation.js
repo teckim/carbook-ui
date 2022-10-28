@@ -1,30 +1,52 @@
 import React from 'react';
 
-const MyReservation = () => (
-  <div>
-    <h1>ALL RESERVATIONS</h1>
-    <div>
-      <div>
-        <div>
-          <div>
-            <p>Car:</p>
-            <p>Prado</p>
-          </div>
-          <div>
-            <p>City:</p>
-            <p>Kampala</p>
-          </div>
-          <div>
-            <p>Date:</p>
-            <p>2022-10-8</p>
-          </div>
-        </div>
-        <button type="button">
-          Delete
-        </button>
+import style from './MyReservation.module.css';
+
+export default function MyReservation() {
+  // const reservations = useSelector((state) => state.reservations);
+
+  return (
+    <div className={style.myreservations}>
+      <div className={style.pagetitle}>
+        <h1 className={style.maintitle}>
+          My Reservations
+        </h1>
+        <p>List of All reservations</p>
+      </div>
+
+      <div className={style.carstable}>
+        <table>
+          <thead>
+            <tr>
+              <th>Reservations</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className={style.cardata}>
+                <img alt="car" />
+                <div className={style.carname}>
+                  <h3>car Name</h3>
+                  <h3>kinyeramo@gmail.com</h3>
+                  <p>Kampala</p>
+                  <p>Uganda</p>
+                </div>
+              </td>
+              <td className="hr-center">2022-10-22</td>
+              <td className="hr-center">
+                <button
+                  type="button"
+                  className={style.deletebtn}
+                >
+                  Cancel Reservation
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  </div>
-);
-
-export default MyReservation;
+  );
+}

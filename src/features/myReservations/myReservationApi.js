@@ -9,7 +9,3 @@ export const retrieveRersavations = createAsyncThunk('reservations/retrieve', as
   console.log(res.data);
   return res.data;
 });
-
-export function register(reservation) {
-  return http.post('users', { user });
-}
