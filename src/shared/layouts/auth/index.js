@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { selectErrors } from './authSlice';
-import './auth.css';
+import { Outlet } from 'react-router-dom';
+import { selectErrors } from '../../../features/auth/authSlice';
+import './styles.css';
 
-// eslint-disable-next-line react/prop-types
-const AuthLayout = ({ children }) => {
+const AuthLayout = () => {
   const errors = useSelector(selectErrors);
 
   return (
-    <div className="auth-layout">
+    <main className="auth-layout">
       <div className="container">
         {!!errors?.length && (
         <div className="errors">
@@ -16,10 +16,10 @@ const AuthLayout = ({ children }) => {
         </div>
         )}
         <div className="content">
-          {children}
+          <Outlet />
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 
