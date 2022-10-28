@@ -7,6 +7,7 @@ import RegisterPage from '../pages/RegisterPage';
 import HomePage from '../pages/HomePage';
 import CarDetailsPage from '../pages/CarDetailsPage';
 import MyReservationsPage from '../pages/MyReservationsPage';
+import CarReservationPage from '../pages/CarReservationPage';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: 'cars/:id',
         element: <CarDetailsPage />,
+      },
+      {
+        path: 'cars/:id/reserve',
+        element: <CarReservationPage />,
       },
     ],
   },
