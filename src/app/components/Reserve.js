@@ -24,7 +24,7 @@ function Reserve() {
     });
   };
 
-  handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const reserveData = new FormData();
     reserveData.append('car_id', +formData.car_id);
@@ -32,6 +32,7 @@ function Reserve() {
     reserveData.append('countery', +formData.country);
     reserveData.append('city', +formData.city);
     reserveData.append('date', +formData.date);
+    dispatch(getMyRservationsAsync(reserveData));
   };
 
   return (
@@ -48,15 +49,17 @@ function Reserve() {
           platform to connect experienced and upcoming engineering.
         </p>
         <div className="btn-container">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className={style.wrapper}>
-              <input type="" name="country" placeholder="country" />
-              <input type="text" name="city" placeholder="city" />
+              <input type="" name="country" placeholder="country" onChange={handleChange} />
+              <input type="text" name="city" placeholder="city" onChange={handleChange} />
 
-              <select name="car_id">
-                <option>Kinyera</option>
+              <select name="car_id" onChange={handleChange}>
+                {carRid?.map((car) => (
+                  <option key={car.id} value={car.id}>{car.name}</option>
+                ))}
               </select>
-              <input className={style.date} type="date" name="date" id="" />
+              <input className={style.date} type="date" name="date" id="" onChange={handleChange} />
             </div>
             <button
               type="submit"
