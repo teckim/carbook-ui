@@ -49,6 +49,12 @@ export const registerAsync = createAsyncThunk(
 export const authSlice = createSlice({
   name: 'auth',
   initialState,
+  reducers: {
+    logout(state) {
+      state.jwt = null;
+      state.user = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(loginAsync.pending, (state) => {
@@ -82,6 +88,8 @@ export const authSlice = createSlice({
       });
   },
 });
+
+export const { logout } = authSlice.actions;
 
 export const selectUser = (state) => state.auth.user;
 export const selectAuthToken = (state) => state.auth.jwt;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { registerAsync, selectErrors } from './authSlice';
+import { useNavigate, Link } from 'react-router-dom';
+import { registerAsync, selectErrors } from '../authSlice';
 
 const LoginFrom = () => {
   const navigate = useNavigate();
@@ -50,6 +50,10 @@ const LoginFrom = () => {
           <button className="button" type="button" onClick={onSubmit}>Register</button>
         </div>
       </form>
+      <small className="auth-footer">
+        <span>Already have an account? </span>
+        <Link to="/login">Login</Link>
+      </small>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { loginAsync } from './authSlice';
+import { useNavigate, Link } from 'react-router-dom';
+import { loginAsync } from '../authSlice';
 
 const LoginFrom = () => {
   const navigate = useNavigate();
@@ -37,6 +37,10 @@ const LoginFrom = () => {
           <button className="button" type="button" onClick={onSubmit}>Log in</button>
         </div>
       </form>
+      <small className="auth-footer">
+        <span>Dont have an account? </span>
+        <Link to="/register">Regiter</Link>
+      </small>
     </div>
   );
 };
