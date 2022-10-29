@@ -61,10 +61,10 @@ function AddCar() {
   return (
     <div className="submit-form">
       {submitted ? (
-        <div>
-          <h4>You submitted successfully!</h4>
+        <div className="flex flex-col justify-center items-center">
+          <h4>Car added successfully!</h4>
           <button type="button" className="btn btn-success" onClick={newCar}>
-            Add
+            Add a Car
           </button>
         </div>
       ) : (
