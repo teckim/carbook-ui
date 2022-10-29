@@ -1,11 +1,38 @@
 /* eslint-disable react/jsx-no-undef */
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { FaSearch } from 'react-icons/fa';
 import style from './Reserve.module.css';
 import '../../styles/reserve.css';
+import { getMyRservationsAsync } from '../../features/myReservations/myReservationSlice';
 
 function Reserve() {
-//   const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const carRid = useSelector((state) => state.cars);
+  const initialState = {
+    country: '',
+    city: '',
+    date: '',
+    car_id: '',
+  };
+
+  const [formData, setFormData] = useState(initialState);
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData, [e.target.name]: e.target.value,
+    });
+  };
+
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    const reserveData = new FormData();
+    reserveData.append('car_id', +formData.car_id);
+    reserveData.append('user_id', +formData.user_id);
+    reserveData.append('countery', +formData.country);
+    reserveData.append('city', +formData.city);
+    reserveData.append('date', +formData.date);
+  };
 
   return (
     <div className="showcase">
