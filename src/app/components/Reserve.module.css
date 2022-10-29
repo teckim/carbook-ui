@@ -139,7 +139,6 @@
     }
     
     .wrapper {
-      border: 2px solid red;
       display: flex;
       flex-direction: column;
       width: 100vw;
