@@ -26,7 +26,7 @@ export default function MyReservation() {
           <tbody>
             <tr>
               <td className={style.cardata}>
-                <img alt="car" />
+                <img src="../assert/Race-Car.png" alt="car" />
                 <div className={style.carname}>
                   <h3>car Name</h3>
                   <h3>kinyeramo@gmail.com</h3>
