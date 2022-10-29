@@ -13,19 +13,13 @@ function Reserve() {
         <FaSearch />
       </p>
       <div className="container showcase-inner">
-        <h1>Connect with vetted software developer</h1>
+        <h1>Please Make Your Reservation</h1>
         <p className="about">
           Get me a Car Ride app is built as a capstone project by a group of 4
           microverse talented software developers who want to make the
           engineering world a better place to collaborate. by providing a
           platform to connect experienced and upcoming engineering.
         </p>
-        <p className="about">
-          It is a free, open-source platform which aims to connect experienced
-          and upcoming software developers for a live mentorship all over the
-          world.
-        </p>
-
         <div className="btn-container">
           <form>
             <div className={style.wrapper}>
@@ -41,7 +35,6 @@ function Reserve() {
               type="submit"
               className={style.reserve}
             >
-
               Reserve
             </button>
           </form>
