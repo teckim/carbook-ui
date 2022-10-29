@@ -7,9 +7,9 @@
   --primry-color: #ff6701;
 }
 
-.auth-layout .container {
+/* .auth-layout  {
   width: 360px;
-}
+} */
 
 .auth-layout .errors {
   padding: 4px 8px;
