@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createCar } from '../../../features/car/carDetailsSlice';
+import './addCar.css';
+import styles from '../../../features/SideBar/Sidebar.module.css';
+// import car from './car.jpg';
 
 function AddCar() {
   const initialCarState = {
@@ -23,9 +26,7 @@ function AddCar() {
   };
 
   const saveCar = () => {
-    const {
-      brand, model, image, price, description,
-    } = car;
+    const { brand, model, image, price, description } = car;
 
     dispatch(
       createCar({
@@ -59,16 +60,19 @@ function AddCar() {
   };
 
   return (
-    <div className="submit-form">
+    <div className="md:mt-24 submit-form">
       {submitted ? (
         <div className="flex flex-col justify-center items-center">
           <h4>Car added successfully!</h4>
-          <button type="button" className="btn btn-success" onClick={newCar}>
+          <button type="button" className="btn btn-style" onClick={newCar}>
             Add a Car
           </button>
         </div>
       ) : (
         <div>
+          <div className={`${styles.brandName} top-div mb-6 fs-1 ps-4`}>
+            Add a new car
+          </div>
           <div className="mb-6">
             <label
               htmlFor="brand"
@@ -78,7 +82,7 @@ function AddCar() {
             </label>
             <input
               type="text"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               id="brand"
               required
               value={car.brand || ''}
@@ -95,7 +99,7 @@ function AddCar() {
             </label>
             <input
               type="text"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               id="model"
               required
               value={car.model || ''}
@@ -112,7 +116,7 @@ function AddCar() {
             </label>
             <input
               type="text"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               id="image"
               required
               value={car.image || ''}
@@ -130,7 +134,7 @@ function AddCar() {
             </label>
             <input
               type="text"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               id="description"
               required
               value={car.description || ''}
@@ -147,7 +151,7 @@ function AddCar() {
             </label>
             <input
               type="number"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/2 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               id="price"
               required
               value={car.price || 0}
@@ -156,7 +160,7 @@ function AddCar() {
             />
           </div>
 
-          <button type="button" onClick={saveCar} className="btn btn-success">
+          <button type="button" onClick={saveCar} className="btn btn-style">
             Submit
           </button>
         </div>
