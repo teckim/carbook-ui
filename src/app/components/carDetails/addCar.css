@@ -1,0 +1,28 @@
+:root {
+  --gray-text: #212529;
+  --primary-green: #97c010;
+  --pacifico: 'Pacifico', cursive;
+}
+
+.submit-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.btn-style {
+    background-color: var(--primary-green) !important;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+}
+
+.top-div {
+  height: 100px;
+  text-align: center;
+  margin-top: 25px;
+  background-color: var(--primary-green) !important;
+  border-radius: 10px 10px 0 0;
+  border: 1px solid;
+}
