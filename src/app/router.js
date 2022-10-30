@@ -46,7 +46,7 @@ const router = createBrowserRouter([
         element: <CarReservationPage />,
       },
       {
-        path: '/add',
+        path: '/add-car',
         element: <AddCar />,
       },
     ],
