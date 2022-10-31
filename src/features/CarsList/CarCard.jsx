@@ -1,8 +1,6 @@
-/* eslint-disable camelcase */
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
+import styles from './CarCard.module.css';
 
 const Car = ({
   id, model, image, brand, price,
