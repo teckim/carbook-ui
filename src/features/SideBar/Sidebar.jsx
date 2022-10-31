@@ -17,7 +17,7 @@ const Sidebar = () => {
           <div className={`${styles.navbarContainer} vh-100 pt-5`}>
             <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start">
               <NavLink
-                to="/home"
+                to="/"
                 className="d-flex align-items-center pb-sm-3 mb-3 me-md-auto text-decoration-none"
               >
                 <span className={`${styles.brandName} fs-1 ps-4`}>
@@ -29,7 +29,7 @@ const Sidebar = () => {
                 id="menu"
               >
                 <li className="w-100">
-                  <NavLink to="/home" className="nav-link mb-2 fs-5">
+                  <NavLink to="/" className="nav-link mb-2 fs-5">
                     <i className="fa-solid fa-house me-2" />
                     <span className="ms-1 d-none d-sm-inline">Home</span>
                   </NavLink>

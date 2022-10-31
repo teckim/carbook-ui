@@ -1,34 +1,34 @@
 import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import {
-  retrieveCars,
-  retrieveCar,
-  removeCar,
-} from '../features/car/carDetailsSlice';
+import { retrieveCar, removeCar } from '../features/car/carSlice';
 import '../styles/carDetails.css';
 
 const CarDetailsPage = () => {
   const dispatch = useDispatch();
-  const details = useSelector((state) => state.details);
+  const car = useSelector((state) => state.car.car);
   const dataFetchedRef = useRef(false);
 
   const { id } = useParams();
   useEffect(() => {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true;
-    dispatch(retrieveCars());
     dispatch(retrieveCar(id));
   }, [dispatch, id]);
+
+  if (!car) {
+    return <p>No car found</p>;
+  }
+
   return (
     <div className="details">
       <div className="flex items-center h-screen">
-        <div key={details.id} className="columns-1 md:columns-2 mx-8">
-          <img className="w-full" src={details.image} alt="car" />
+        <div key={car.id} className="columns-1 md:columns-2 mx-8">
+          <img className="w-full" src={car.image} alt="car" />
           <div className="mx-8 flex flex-col">
             <div className="justify-self-end">
-              <h1 className="text-3xl font-bold">{details.brand}</h1>
-              <h1>{details.description}</h1>
+              <h1 className="text-3xl font-bold">{car.brand}</h1>
+              <h1>{car.description}</h1>
             </div>
             <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
@@ -40,7 +40,7 @@ const CarDetailsPage = () => {
                     >
                       Model
                     </th>
-                    <td className="py-4 px-6">{details.model}</td>
+                    <td className="py-4 px-6">{car.model}</td>
                   </tr>
                   <tr className="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
                     <th
@@ -49,26 +49,26 @@ const CarDetailsPage = () => {
                     >
                       Price
                     </th>
-                    <td className="py-4 px-6">{details.price}</td>
+                    <td className="py-4 px-6">{car.price}</td>
                   </tr>
                 </tbody>
               </table>
-              <div className="flex md:mt-24">
-                {/* <button
+            </div>
+            <div className="flex md:mt-24">
+              {/* <button
                   type="button"
                   className="btn bg-red-700 rounded-full"
-                  onClick={() => dispatch(removeCar(details))}
+                  onClick={() => dispatch(removeCar(car))}
                 >
                   Delete car
                 </button> */}
-                <button
-                  type="button"
-                  className="btn btn-style justify-self-end rounded-full"
-                  onClick={() => dispatch(removeCar(details))}
-                >
-                  Reserve car
-                </button>
-              </div>
+              <button
+                type="button"
+                className="btn btn-style justify-self-end rounded-full"
+                onClick={() => dispatch(removeCar(car))}
+              >
+                Reserve car
+              </button>
             </div>
           </div>
         </div>

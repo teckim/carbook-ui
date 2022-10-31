@@ -1,23 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
 import Carousel from 'nuka-carousel/lib/carousel';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import CarCard from './CarCard';
+import { retrieveCars } from '../car/carSlice';
 import './Carousel.css';
 
 const CarList = () => {
-  const [cars, setCars] = useState([]);
+  const cars = useSelector((state) => state.car.all);
+  console.log(cars);
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+
   useEffect(() => {
-    setLoading(true);
-    axios
-      .get('http://localhost:3000/api/v1/cars')
-      .then((response) => {
-        setCars(response.data.cars);
-        setLoading(false);
-      });
-  }, []);
+    dispatch(retrieveCars());
+    setLoading(false);
+  }, [dispatch]);
 
   const theme = useTheme();
   const mdUp = useMediaQuery(theme.breakpoints.up('md'));
@@ -73,6 +72,7 @@ const CarList = () => {
               price={car.price}
             />
           ))}
+          <CarCard car={cars} />
         </Carousel>
       </div>
     </>

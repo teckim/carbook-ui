@@ -34,25 +34,31 @@ export const removeCar = createAsyncThunk('car/delete', async ({ id }) => {
   return { id };
 });
 
-const carDetailsSlice = createSlice({
-  name: 'carDetails',
-  initialState: [],
+const carSlice = createSlice({
+  name: 'car',
+  initialState: {
+    all: [],
+    car: null,
+  },
 
   extraReducers: {
     [createCar.fulfilled]: (state, action) => {
-      state.push(action.payload);
+      state.all.push(action.payload);
     },
-    [retrieveCars.fulfilled]: (state, action) => [action.payload],
+    [retrieveCars.fulfilled]: (state, action) => {
+      state.all = action.payload;
+    },
 
-    [retrieveCar.fulfilled]: (state, action) => action.payload,
+    [retrieveCar.fulfilled]: (state, action) => {
+      state.car = action.payload;
+    },
 
-    [removeCar.fulfilled]: (state, action) => {
-      const index = state.findIndex(({ id }) => id === action.payload.id);
-      state.splice(index, 1);
+    [removeCar.fulfilled]: (state) => {
+      state.car = null;
     },
   },
 });
 
-export const { addCar, deleteCar } = carDetailsSlice.actions;
+export const { addCar, deleteCar } = carSlice.actions;
 
-export default carDetailsSlice.reducer;
+export default carSlice.reducer;

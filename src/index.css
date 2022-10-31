@@ -39,3 +39,13 @@ body {
 .btn-style {
     background-color: var(--primary-green) !important;
 }
+
+.mainCnt {
+  margin-left: 260px;
+}
+
+@media screen and (max-width: 768px) {
+  .mainCnt {
+    margin-left: 0;
+  }
+}
