@@ -19,6 +19,20 @@ const CarList = () => {
       });
   }, []);
 
+  const theme = useTheme();
+  const mdUp = useMediaQuery(theme.breakpoints.up('md'));
+  const lgUp = useMediaQuery(theme.breakpoints.up('lg'));
+
+  let SlideToShowNumber = 1;
+  if (mdUp) {
+    SlideToShowNumber = 2;
+  }
+  if (lgUp) {
+    SlideToShowNumber = 3;
+  }
+
   
+  );
+};
 
 export default CarList;
