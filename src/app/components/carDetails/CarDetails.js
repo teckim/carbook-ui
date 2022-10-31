@@ -5,12 +5,12 @@ import {
   retrieveCars,
   retrieveCar,
   removeCar,
-} from '../../../features/car/carDetailsSlice';
+} from '../../../features/car/carSlice';
 import './carDetails.css';
 
 const CarDetails = () => {
   const dispatch = useDispatch();
-  const details = useSelector((state) => state.details);
+  const car = useSelector((state) => state.car.car);
   const dataFetchedRef = useRef(false);
 
   const { id } = useParams();
@@ -24,11 +24,11 @@ const CarDetails = () => {
   return (
 
       <div className="flex items-center h-screen">
-        <div key={details.id} className="columns-1 md:columns-2 mx-8">
-          <img className="w-full" src={details.image} alt="car" />
+        <div key={car.id} className="columns-1 md:columns-2 mx-8">
+          <img className="w-full" src={car.image} alt="car" />
           <div className="mx-8">
-            <h1 className="text-3xl font-bold">{details.brand}</h1>
-            <h1>{details.description}</h1>
+            <h1 className="text-3xl font-bold">{car.brand}</h1>
+            <h1>{car.description}</h1>
             <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <tbody>
@@ -39,7 +39,7 @@ const CarDetails = () => {
                     >
                       Model
                     </th>
-                    <td className="py-4 px-6">{details.model}</td>
+                    <td className="py-4 px-6">{car.model}</td>
                   </tr>
                   <tr className="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
                     <th
@@ -48,7 +48,7 @@ const CarDetails = () => {
                     >
                       Price
                     </th>
-                    <td className="py-4 px-6">{details.price}</td>
+                    <td className="py-4 px-6">{car.price}</td>
                   </tr>
                 </tbody>
               </table>
@@ -58,14 +58,14 @@ const CarDetails = () => {
             <button
               type="button"
               className="btn bg-red-700"
-              onClick={() => dispatch(removeCar(details))}
+              onClick={() => dispatch(removeCar(car))}
             >
               Delete car
             </button>
             <button
               type="button"
               className="btn bg-green-700"
-              onClick={() => dispatch(removeCar(details))}
+              onClick={() => dispatch(removeCar(car))}
             >
               Reserve car
             </button>
