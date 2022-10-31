@@ -38,7 +38,44 @@ const CarList = () => {
       </div>
     );
   }
-  
+  return (
+    <>
+      <h2 className="h2 text-center mt-5 text-uppercase">
+        <strong>Our Latest Cars</strong>
+      </h2>
+      <p className="fs-5 text-center text-muted mb-5">
+        Please select a car from below to reserve
+      </p>
+      <div>
+        <Carousel
+          renderCenterLeftControls={({ previousSlide }) => (
+            <button type="button" onClick={previousSlide}>
+              <i className="fa-solid fa-caret-left" />
+            </button>
+          )}
+          renderCenterRightControls={({ nextSlide }) => (
+            <button type="button" onClick={nextSlide}>
+              <i className="fa-solid fa-caret-right" />
+            </button>
+          )}
+          className="car-carousel"
+          wrapAround
+          slidesToShow={SlideToShowNumber}
+          renderBottomCenterControls={false}
+        >
+          {cars.map((car) => (
+            <CarCard
+              key={car.id}
+              id={car.id}
+              brand={car.brand}
+              image={car.image}
+              model={car.model}
+              price={car.price}
+            />
+          ))}
+        </Carousel>
+      </div>
+    </>
   );
 };
 
