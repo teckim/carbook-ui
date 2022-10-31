@@ -64,13 +64,19 @@ function AddCar() {
       {submitted ? (
         <div className="flex flex-col justify-center items-center">
           <h4>Car added successfully!</h4>
-          <button type="button" className="btn btn-style" onClick={newCar}>
+          <button
+            type="button"
+            className="btn btn-style rounded-full"
+            onClick={newCar}
+          >
             Add a Car
           </button>
         </div>
       ) : (
         <div>
-          <div className={`${styles.brandName} top-div mb-6 fs-1 ps-4`}>
+          <div
+            className={`${styles.brandName} top-div mb-6 fs-1 ps-4 rounded-t-lg`}
+          >
             Add a new car
           </div>
           <div className="mb-6">
@@ -160,7 +166,11 @@ function AddCar() {
             />
           </div>
 
-          <button type="button" onClick={saveCar} className="btn btn-style">
+          <button
+            type="button"
+            onClick={saveCar}
+            className="btn btn-style rounded-full"
+          >
             Submit
           </button>
         </div>
