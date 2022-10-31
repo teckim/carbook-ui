@@ -35,3 +35,7 @@ body {
   color: #fff !important;
   background: var(--primary-green) !important;
 }
+
+.btn-style {
+    background-color: var(--primary-green) !important;
+}
