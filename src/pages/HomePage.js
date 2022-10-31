@@ -1,7 +1,11 @@
 import React from 'react';
+import CarsList from '../features/CarsList/CarsList';
+import './homepage.css';
 
 const HomePage = () => (
-  <div>This is the home page</div>
+  <div className="mainCnt">
+    <CarsList />
+  </div>
 );
 
 export default HomePage;
