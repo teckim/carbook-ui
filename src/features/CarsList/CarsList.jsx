@@ -31,6 +31,13 @@ const CarList = () => {
     SlideToShowNumber = 3;
   }
 
+  if (loading) {
+    return (
+      <div className="container-fluid vh-100 v-100 d-flex justify-content-center align-items-center">
+        <i className="fa-solid fa-spinner fa-spin fs-1" />
+      </div>
+    );
+  }
   
   );
 };
