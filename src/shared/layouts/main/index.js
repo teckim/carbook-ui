@@ -7,7 +7,7 @@ const MainLayout = () => (
     <aside>
       <Sidebar />
     </aside>
-    <section>
+    <section className="mainCnt">
       <Outlet />
     </section>
   </main>

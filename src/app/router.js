@@ -10,6 +10,7 @@ import HomePage from '../pages/HomePage';
 import CarDetailsPage from '../pages/CarDetailsPage';
 import MyReservationsPage from '../pages/MyReservationsPage';
 import CarReservationPage from '../pages/CarReservationPage';
+import AddCar from './components/carDetails/AddCar';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
       {
         path: 'cars/:id/reserve',
         element: <CarReservationPage />,
+      },
+      {
+        path: '/add-car',
+        element: <AddCar />,
       },
     ],
   },
