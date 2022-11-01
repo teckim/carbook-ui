@@ -1,13 +1,17 @@
 /* eslint-disable react/jsx-no-undef */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import style from './CarReservationPage.module.css';
 import '../styles/reserve.css';
-import { getMyRservationsAsync } from '../features/myReservations/myReservationSlice';
+import { createReservationAsync } from '../features/myReservations/myReservationSlice';
 
 const CarReservationPage = () => {
+  const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const initialState = {
     city: '',
     date: '',
@@ -24,11 +28,17 @@ const CarReservationPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const reserveData = new FormData();
-    reserveData.append('car_id', +formData.car_id);
-    reserveData.append('city', +formData.city);
-    reserveData.append('date', +formData.date);
-    dispatch(getMyRservationsAsync(reserveData));
+
+    const data = {
+      reservation: {
+        city: formData.city,
+        date: formData.date,
+        car_id: id,
+      },
+    };
+
+    dispatch(createReservationAsync(data)).unwrap()
+      .then(() => navigate('/me/reservations'));
   };
 
   return (
