@@ -10,7 +10,7 @@
 }
 
 .btn-style {
-    background-color: var(--primary-green) !important;
+  background-color: var(--primary-green) !important;
 }
 
 .img {
@@ -23,6 +23,7 @@
   text-align: center;
   margin-top: 25px;
   background-color: var(--primary-green) !important;
+
   /* border-radius: 10px 10px 0 0; */
   border: 1px solid;
 }
