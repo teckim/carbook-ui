@@ -55,13 +55,6 @@ const CarDetailsPage = () => {
               </table>
             </div>
             <div className="flex md:mt-24">
-              {/* <button
-                  type="button"
-                  className="btn bg-red-700 rounded-full"
-                  onClick={() => dispatch(removeCar(car))}
-                >
-                  Delete car
-                </button> */}
               <button
                 type="button"
                 className="btn btn-style justify-self-end rounded-full"
