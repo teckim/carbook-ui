@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { createCar } from '../../../features/car/carSlice';
 import './addCar.css';
 import styles from '../../../features/SideBar/Sidebar.module.css';
-// import car from './car.jpg';
 
 function AddCar() {
   const initialCarState = {
