@@ -32,10 +32,8 @@ export default function MyReservation() {
                   <td className={style.cardata}>
                     <img src="../assert/Race-Car.png" alt="car" />
                     <div className={style.carname}>
-                      <h3>{reservation.car_name}</h3>
-                      <h3>{reservation.email}</h3>
+                      <h3>{reservation.brand}</h3>
                       <p>{reservation.city}</p>
-                      <p>{reservation.country}</p>
                     </div>
                   </td>
                   <td className="hr-center">2022-10-22</td>
