@@ -19,7 +19,7 @@ Main features of this website are:
 ### Initial state of the Kanban Board:
 ![image](https://user-images.githubusercontent.com/89228743/196984547-5569b508-be9b-4216-9f54-ceb5a6e0a483.png)
 
-### Team members: 3 (Hakim, Hanningtone,Ridwan, Amos)
+### Team members: 4 (Hakim, Hanningtone,Ridwan, Amos)
  
 ## Built With 🛠️
 

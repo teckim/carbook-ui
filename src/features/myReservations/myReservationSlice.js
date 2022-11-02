@@ -3,15 +3,29 @@ import reservationData from './reservationsApi';
 
 const initialState = {
   status: null,
-  myreservations: [],
+  myReservations: [],
   errors: [],
 };
 
 export const getMyRservationsAsync = createAsyncThunk(
   'myReservation/get',
   async () => {
-    const myReservations = await reservationData.getAll();
-    console.log(myReservations);
+    const { data } = await reservationData.getAll();
+    return data;
+  },
+);
+
+export const createReservationAsync = createAsyncThunk(
+  'myReservation/create',
+  async (data) => {
+    await reservationData.create(data);
+  },
+);
+
+export const cancelReservationAsync = createAsyncThunk(
+  'myReservation/cancel',
+  async (id) => {
+    await reservationData.cancel(id);
   },
 );
 
@@ -27,7 +41,7 @@ export const myReservationsSlice = createSlice({
       .addCase(getMyRservationsAsync.fulfilled, (state, action) => {
         state.status = 'idle';
         state.errors = [];
-        console.log(action);
+        state.myReservations = action.payload;
       })
       .addCase(getMyRservationsAsync.rejected, (state, action) => {
         state.status = 'error';

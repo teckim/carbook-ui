@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { retrieveCar, removeCar } from '../features/car/carSlice';
+import { Link, useParams } from 'react-router-dom';
+import { retrieveCar } from '../features/car/carSlice';
 import '../styles/carDetails.css';
 
 const CarDetailsPage = () => {
@@ -55,20 +55,14 @@ const CarDetailsPage = () => {
               </table>
             </div>
             <div className="flex md:mt-24">
-              {/* <button
+              <Link to={`/cars/${car.id}/reserve`}>
+                <button
                   type="button"
-                  className="btn bg-red-700 rounded-full"
-                  onClick={() => dispatch(removeCar(car))}
+                  className="btn btn-style justify-self-end rounded-full"
                 >
-                  Delete car
-                </button> */}
-              <button
-                type="button"
-                className="btn btn-style justify-self-end rounded-full"
-                onClick={() => dispatch(removeCar(car))}
-              >
-                Reserve car
-              </button>
+                  Reserve car
+                </button>
+              </Link>
             </div>
           </div>
         </div>
