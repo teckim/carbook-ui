@@ -38,7 +38,6 @@ function AddCar() {
     )
       .unwrap()
       .then((data) => {
-        console.log(data);
         setCar({
           id: data.id,
           brand: data.brand,

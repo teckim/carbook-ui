@@ -52,7 +52,7 @@ const LoginFrom = () => {
       </form>
       <small className="auth-footer">
         <span>Already have an account? </span>
-        <Link to="/login">Login</Link>
+        <Link className="text-indigo-600" to="/login">Login</Link>
       </small>
     </div>
   );

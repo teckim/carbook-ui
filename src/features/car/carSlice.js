@@ -19,13 +19,11 @@ export const createCar = createAsyncThunk(
 
 export const retrieveCars = createAsyncThunk('cars/retrieve', async () => {
   const res = await CarData.getAll();
-  console.log(res.data);
   return res.data;
 });
 
 export const retrieveCar = createAsyncThunk('car/retrieve', async (id) => {
   const res = await CarData.get(id);
-  console.log(res.data);
   return res.data;
 });
 
