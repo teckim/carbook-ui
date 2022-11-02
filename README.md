@@ -1,46 +1,124 @@
-# Getting Started with Create React App and Redux
+# Carbook UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This project is made for the reservation of cars. If you're preparing for a special day/event and you want a cool car for it this website is the best place for you. If you have a car and want to make some extra money from it, you can add that to our website and others will be able to reserve it! 
 
-## Available Scripts
+Main features of this website are:
+ - Users can see details of all the cars.
+ - Users can reserve a car for a special day (a car that hasn't been reserved yet).
+ - Users can add their own cars and remove them if they want to.
 
-In the project directory, you can run:
+ ## Project Documentation 📄
 
-### `npm start`
+- API deployment [link](http://localhost:3000/v1)👈
+- API GitHub repository [link](https://github.com/teckim/carbook-api)👈
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Kanban Board:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Kanban Board [link](https://github.com/users/teckim/projects/2)
 
-### `npm test`
+### Initial state of the Kanban Board:
+![image](https://user-images.githubusercontent.com/89228743/196984547-5569b508-be9b-4216-9f54-ceb5a6e0a483.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Team members: 4 (Hakim, Hanningtone,Ridwan, Amos)
+ 
+## Built With 🛠️
 
-### `npm run build`
+ - Programming Languages: HTML, CSS, JavaScript.
+ - Frameworks: React, Redux and Bootstrap.
+ - Code Editor: VS Code.
+ 
+## Getting Started
+ 
+To get a local copy up and running follow these simple steps.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- A web browser like Google Chrome.
+- A code editor like Visual Studio Code with Git and nodejs.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> You can check if Git is installed by running the following command in the terminal.
+```
+$ git --version
+```
+> Likewise for Node installation.
+```
+$ node --version
+```
 
-### `npm run eject`
+### Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Clone the repository using the GitHub link provided below.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+In the terminal, go to your file directory and run this command.
+```
+$ git clone https://github.com/teckim/carbook-ui.git
+```
+### Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Run locally
 
-## Learn More
+Make your way to the correct directory by running this command:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+$ cd carbook-ui
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Install the required dependencies to run the project with this command:
+```
+$ npm install
+```
+
+Then run it in your browser with this command:
+
+```
+$ npm start
+```
+
+Kindly modify the files as needed.
+
+### Run tests
+
+To run tests, please run this command
+```
+$ npm run test
+```
+## Authors
+
+👤 **Hakim BAHEDDI** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- <img src="https://user-images.githubusercontent.com/67911212/185442918-aa30589c-c9f9-4edb-8955-1036ceebd5c2.png" width="18"/> [teckim](https://github.com/teckim)
+
+
+👤 **Hanningtone Monda** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- <img src="https://user-images.githubusercontent.com/67911212/185442918-aa30589c-c9f9-4edb-8955-1036ceebd5c2.png" width="18"/> [HanningtoneM](https://github.com/HanningtoneM)
+
+
+👤 **Kinyera Amos** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- <img src="https://user-images.githubusercontent.com/67911212/185442918-aa30589c-c9f9-4edb-8955-1036ceebd5c2.png" width="18"/> [bigmosi](https://github.com/bigmosi)
+
+👤 **Mamadou Abdoulaye** <img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="20"/>
+
+- <img src="https://user-images.githubusercontent.com/67911212/185442918-aa30589c-c9f9-4edb-8955-1036ceebd5c2.png" width="18"/> [ridwanediallo](https://github.com/ridwanediallo)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+- [Microverse](https://www.microverse.org/)
+- Original design idea by [Murat Korkmaz on Behance](https://www.behance.net/muratk).
+- [FontAwesome](https://fontawesome.com/) and [Flaticon](https://www.flaticon.com/) for icons.
+
+## 📝 License
+This project is MIT licensed.
+

@@ -1,7 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import MyReservation from './components/MyReservation';
-import Reserve from './components/Reserve';
 import AuthLayout from '../shared/layouts/auth';
 import MainLayout from '../shared/layouts/main';
 import LoginPage from '../pages/LoginPage';
@@ -54,10 +53,6 @@ const router = createBrowserRouter([
   {
     path: '/reservation',
     element: <MyReservation />,
-  },
-  {
-    path: '/reserve',
-    element: <Reserve />,
   },
 ]);
 
