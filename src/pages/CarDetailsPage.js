@@ -22,11 +22,13 @@ const CarDetailsPage = () => {
 
   return (
     <div className="details">
-      <div className="flex items-center h-screen">
-        <div key={car.id} className="columns-1 md:columns-2 mx-8">
-          <img className="w-full" src={car.image} alt="car" />
+      <div className="flex flex-col justify-center h-screen">
+        <div key={car.id} className="grid grid-cols-1 md:grid-cols-2 mx-4">
+          <div className="my-8">
+            <img className="w-full" src={car.image} alt="car" />
+          </div>
           <div className="mx-8 flex flex-col">
-            <div className="justify-self-end">
+            <div className="justify-self-end text-right mb-4">
               <h1 className="text-3xl font-bold">{car.brand}</h1>
               <h1>{car.description}</h1>
             </div>
@@ -40,7 +42,7 @@ const CarDetailsPage = () => {
                     >
                       Model
                     </th>
-                    <td className="py-4 px-6">{car.model}</td>
+                    <td className="py-4 px-6 text-right">{car.model}</td>
                   </tr>
                   <tr className="bg-gray-50 border-b dark:bg-gray-800 dark:border-gray-700">
                     <th
@@ -49,12 +51,12 @@ const CarDetailsPage = () => {
                     >
                       Price
                     </th>
-                    <td className="py-4 px-6">{car.price}</td>
+                    <td className="py-4 px-6 text-right">{car.price}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <div className="flex md:mt-24">
+            <div className="flex ml-auto md:mt-8">
               <Link to={`/cars/${car.id}/reserve`}>
                 <button
                   type="button"
