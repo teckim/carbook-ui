@@ -3,9 +3,7 @@ import CarData from './carData';
 
 export const createCar = createAsyncThunk(
   'car/create',
-  async ({
-    brand, model, image, price, description,
-  }) => {
+  async ({ brand, model, image, price, description }) => {
     const res = await CarData.create({
       brand,
       model,
@@ -53,8 +51,8 @@ const carSlice = createSlice({
       state.car = action.payload;
     },
 
-    [removeCar.fulfilled]: (state) => {
-      state.car = null;
+    [removeCar.fulfilled]: (state, action) => {
+      state.all = [...state.all.filter(({ id }) => id !== action.payload.id)];
     },
   },
 });
