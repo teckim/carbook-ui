@@ -2,13 +2,11 @@ import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { retrieveCars, removeCar } from '../../../features/car/carSlice';
-// import DeleteToast from './deleteToast';
 
 const DeleteCar = () => {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.car.all);
   const dataFetchedRef = useRef(false);
-  // const [deleteCar, setDeleteCar] = useState(false);
 
   const { id } = useParams();
   useEffect(() => {
@@ -16,11 +14,6 @@ const DeleteCar = () => {
     dataFetchedRef.current = true;
     dispatch(retrieveCars());
   }, [dispatch, id]);
-
-  // const deleteCarHandler = (car) => {
-  //   dispatch(removeCar(car));
-  //   setDeleteCar(true);
-  // };
 
   if (!cars) {
     return <p>No car found</p>;
