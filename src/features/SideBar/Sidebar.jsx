@@ -44,7 +44,7 @@ const Sidebar = () => {
                   </NavLink>
                 </li>
                 <li className="w-100">
-                  <NavLink to="/reservations" className="nav-link mb-2 fs-5">
+                  <NavLink to="/me/reservations" className="nav-link mb-2 fs-5">
                     <i className="fa-solid fa-calendar-days me-2" />
                     <span className="ms-1 d-none d-sm-inline">
                       My Reservations
