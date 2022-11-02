@@ -9,13 +9,13 @@ import './Carousel.css';
 
 const CarList = () => {
   const cars = useSelector((state) => state.car.all);
-  console.log(cars);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(retrieveCars());
-    setLoading(false);
+    dispatch(retrieveCars()).unwrap().then(() => {
+      setLoading(false);
+    });
   }, [dispatch]);
 
   const theme = useTheme();
@@ -72,7 +72,6 @@ const CarList = () => {
               price={car.price}
             />
           ))}
-          <CarCard car={cars} />
         </Carousel>
       </div>
     </>

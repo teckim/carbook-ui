@@ -58,7 +58,7 @@ const ReservationsTable = ({ reservations, cancelReservation }) => (
         { reservations.map((reservation) => (
           <tr key={reservation.id}>
             <td className={style.cardata}>
-              <img src="../assert/Race-Car.png" alt="car" />
+              <img src={reservation.car.image} alt="car" />
               <div className={style.carname}>
                 <h3>{reservation.brand}</h3>
                 <p>{reservation.city}</p>
@@ -68,7 +68,7 @@ const ReservationsTable = ({ reservations, cancelReservation }) => (
             <td className="hr-center">
               <button
                 type="button"
-                className={style.deletebtn}
+                className={`${style.deletebtn} btn`}
                 onClick={() => cancelReservation(reservation.id)}
               >
                 Cancel Reservation

@@ -1,8 +1,11 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { selectIsLoggedIn } from '../auth/authSlice';
 import styles from './Sidebar.module.css';
 
 const Sidebar = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const logout = () => {
     localStorage.removeItem('user');
     window.location.reload();
@@ -34,23 +37,18 @@ const Sidebar = () => {
                     <span className="ms-1 d-none d-sm-inline">Home</span>
                   </NavLink>
                 </li>
-                <li className="w-100">
-                  <NavLink
-                    to={`/reserve/${null}`}
-                    className="nav-link mb-2 fs-5"
-                  >
-                    <i className="fa-solid fa-car-side me-2" />
-                    <span className="ms-1 d-none d-sm-inline">Reserve</span>
-                  </NavLink>
-                </li>
-                <li className="w-100">
-                  <NavLink to="/me/reservations" className="nav-link mb-2 fs-5">
-                    <i className="fa-solid fa-calendar-days me-2" />
-                    <span className="ms-1 d-none d-sm-inline">
-                      My Reservations
-                    </span>
-                  </NavLink>
-                </li>
+                {
+                  isLoggedIn && (
+                    <li className="w-100">
+                      <NavLink to="/me/reservations" className="nav-link mb-2 fs-5">
+                        <i className="fa-solid fa-calendar-days me-2" />
+                        <span className="ms-1 d-none d-sm-inline">
+                          My Reservations
+                        </span>
+                      </NavLink>
+                    </li>
+                  )
+                }
                 <li className="w-100">
                   <NavLink to="/add-car" className="nav-link mb-2 fs-5">
                     <i className="fa-solid fa-plus me-2" />
@@ -63,17 +61,35 @@ const Sidebar = () => {
                     <span className="ms-1 d-none d-sm-inline">Delete Car</span>
                   </NavLink>
                 </li>
-
-                <li className="w-100 nav-link mb-2 mt-2">
-                  <button
-                    type="button"
-                    className="btn btn-danger d-none d-sm-inline fs-5"
-                    onClick={() => logout()}
-                  >
-                    <i className="fa-solid fa-arrow-right-from-bracket me-2" />
-                    Logout
-                  </button>
-                </li>
+                {
+                  isLoggedIn
+                    ? (
+                      <li className="w-100 nav-link mb-2 mt-2">
+                        <button
+                          type="button"
+                          className="btn btn-danger d-none d-sm-inline fs-5"
+                          onClick={() => logout()}
+                        >
+                          <i className="fa-solid fa-arrow-right-from-bracket me-2" />
+                          Logout
+                        </button>
+                      </li>
+                    )
+                    : (
+                      <>
+                        <li className="w-100">
+                          <NavLink to="/login" className="nav-link mb-2 fs-5">
+                            <span className="ms-1 d-none d-sm-inline">Log in</span>
+                          </NavLink>
+                        </li>
+                        <li className="w-100">
+                          <NavLink to="/register" className="nav-link mb-2 fs-5">
+                            <span className="ms-1 d-none d-sm-inline">Register</span>
+                          </NavLink>
+                        </li>
+                      </>
+                    )
+                }
               </ul>
             </div>
           </div>

@@ -39,7 +39,7 @@ const LoginFrom = () => {
       </form>
       <small className="auth-footer">
         <span>Dont have an account? </span>
-        <Link to="/register">Regiter</Link>
+        <Link className="text-indigo-600" to="/register">Regiter</Link>
       </small>
     </div>
   );
