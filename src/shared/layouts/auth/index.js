@@ -9,7 +9,7 @@ const AuthLayout = () => {
 
   return (
     <main className="auth-layout">
-      <div className="container">
+      <div>
         {!!errors?.length && (
         <div className="errors">
           {errors.map((err) => typeof err === 'string' && err)}
