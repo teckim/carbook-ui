@@ -13,5 +13,3 @@ exports[`Homepage component should render correctly 1`] = `
 `;
 
 exports[`Homepage component should render correctly after state change 1`] = `<DocumentFragment />`;
-
-exports[`Homepage component should render correctly after state change 2`] = `<DocumentFragment />`;

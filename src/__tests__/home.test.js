@@ -10,4 +10,7 @@ describe('Homepage component', () => {
   it('should render correctly', () => {
     expect(firstRender).toMatchSnapshot();
   });
+  it('should render correctly after state change', () => {
+    expect(asFragment()).toMatchSnapshot();
+  });
 });
