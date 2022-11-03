@@ -8,6 +8,7 @@ const Sidebar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const logout = () => {
     localStorage.removeItem('user');
+    localStorage.removeItem('jwt');
     window.location.reload();
   };
 
@@ -74,8 +75,7 @@ const Sidebar = () => {
                           Logout
                         </button>
                       </li>
-                    )
-                    : (
+                    ) : (
                       <>
                         <li className="w-100">
                           <NavLink to="/login" className="nav-link mb-2 fs-5">
@@ -113,22 +113,18 @@ const Sidebar = () => {
                 Home
               </NavLink>
             </li>
-            <li className="nav-item mb-2">
-              <NavLink
-                to={`/reserve/${null}`}
-                className={`${styles.mobileNavLink} nav-link`}
-              >
-                Reserve
-              </NavLink>
-            </li>
-            <li className="nav-item mb-2">
-              <NavLink
-                to="/me/reservations"
-                className={`${styles.mobileNavLink} nav-link`}
-              >
-                My Reservations
-              </NavLink>
-            </li>
+            {
+              isLoggedIn && (
+                <li className="nav-item mb-2">
+                  <NavLink
+                    to="/me/reservations"
+                    className={`${styles.mobileNavLink} nav-link`}
+                  >
+                    My Reservations
+                  </NavLink>
+                </li>
+              )
+            }
             <li className="nav-item mb-2">
               <NavLink
                 to="/add-car"
@@ -145,16 +141,34 @@ const Sidebar = () => {
                 Delete Car
               </NavLink>
             </li>
-            <li className="nav-item mb-2">
-              <button
-                type="button"
-                className={`${styles.mobileNavLink} nav-link btn btn-danger`}
-                onClick={() => logout()}
-              >
-                <i className="fa-solid fa-arrow-right-from-bracket me-2" />
-                Logout
-              </button>
-            </li>
+            {
+              isLoggedIn
+                ? (
+                  <li className="nav-item mb-2">
+                    <button
+                      type="button"
+                      className={`${styles.mobileNavLink} nav-link btn btn-danger`}
+                      onClick={() => logout()}
+                    >
+                      <i className="fa-solid fa-arrow-right-from-bracket me-2" />
+                      Logout
+                    </button>
+                  </li>
+                ) : (
+                  <>
+                    <li className="nav-item mt-4">
+                      <NavLink to="/login" className="nav-link mb-2">
+                        <span className="ms-1">Log in</span>
+                      </NavLink>
+                    </li>
+                    <li className="nav-item">
+                      <NavLink to="/register" className="nav-link mb-2">
+                        <span className="ms-1">Register</span>
+                      </NavLink>
+                    </li>
+                  </>
+                )
+              }
           </ul>
         </div>
       </div>
