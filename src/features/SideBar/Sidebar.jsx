@@ -107,7 +107,7 @@ const Sidebar = () => {
           <ul className="navbar-nav d-flex flex-column align-items-center me-auto mt-3 mb-2 mb-lg-0 w-100">
             <li className="nav-item mb-2">
               <NavLink
-                to="/home"
+                to="/"
                 className={`${styles.mobileNavLink} nav-link`}
               >
                 Home
@@ -123,7 +123,7 @@ const Sidebar = () => {
             </li>
             <li className="nav-item mb-2">
               <NavLink
-                to="/reservations"
+                to="/me/reservations"
                 className={`${styles.mobileNavLink} nav-link`}
               >
                 My Reservations
