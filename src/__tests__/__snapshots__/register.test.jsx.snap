@@ -1,61 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Login component should render correctly 1`] = `
-<DocumentFragment>
-  <div>
-    <form
-      class="form"
-    >
-      <div>
-        <label
-          class="label"
-          for="username"
-        >
-          Username
-          <input
-            class="input"
-            id="username"
-          />
-        </label>
-      </div>
-      <div>
-        <label
-          class="label"
-          for="password"
-        >
-          Password
-          <input
-            class="input"
-            id="password"
-            type="password"
-          />
-        </label>
-      </div>
-      <div>
-        <button
-          class="button"
-          type="button"
-        >
-          Log in
-        </button>
-      </div>
-    </form>
-    <small
-      class="auth-footer"
-    >
-      <span>
-        Dont have an account? 
-      </span>
-      <a
-        href="/register"
-      >
-        Regiter
-      </a>
-    </small>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`Register component should render correctly 1`] = `
 <DocumentFragment>
   <div>
@@ -125,6 +69,7 @@ exports[`Register component should render correctly 1`] = `
         Already have an account? 
       </span>
       <a
+        class="text-indigo-600"
         href="/login"
       >
         Login
