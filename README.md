@@ -10,7 +10,7 @@ Main features of this website are:
  ## Project Documentation 📄
 
 - Live demo [link](https://ui-carbook.herokuapp.com/)👈
-- API deployment [link](http://localhost:3000/v1)👈
+- API deployment [link](https://api-carbook.herokuapp.com/api-docs)👈
 - API GitHub repository [link](https://github.com/teckim/carbook-api)👈
 
 ## Kanban Board:
