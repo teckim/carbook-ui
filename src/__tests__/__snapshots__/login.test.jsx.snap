@@ -47,6 +47,7 @@ exports[`Login component should render correctly 1`] = `
         Dont have an account? 
       </span>
       <a
+        class="text-indigo-600"
         href="/register"
       >
         Regiter

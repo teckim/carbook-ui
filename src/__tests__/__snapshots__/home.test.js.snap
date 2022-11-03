@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Homepage component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="container-fluid vh-100 v-100 d-flex justify-content-center align-items-center"
+  >
+    <i
+      class="fa-solid fa-spinner fa-spin fs-1"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Homepage component should render correctly after state change 1`] = `<DocumentFragment />`;
