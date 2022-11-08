@@ -30,6 +30,14 @@ export const removeCar = createAsyncThunk('car/delete', async ({ id }) => {
   return { id };
 });
 
+export const updateTutorial = createAsyncThunk(
+  'car/update',
+  async ({ id, data }) => {
+    const res = await CarData.update(id, data);
+    return res.data;
+  }
+);
+
 const carSlice = createSlice({
   name: 'car',
   initialState: {
