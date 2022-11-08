@@ -30,7 +30,7 @@ export const removeCar = createAsyncThunk('car/delete', async ({ id }) => {
   return { id };
 });
 
-export const updateTutorial = createAsyncThunk(
+export const updateCar = createAsyncThunk(
   'car/update',
   async ({ id, data }) => {
     const res = await CarData.update(id, data);
@@ -59,6 +59,15 @@ const carSlice = createSlice({
 
     [removeCar.fulfilled]: (state, action) => {
       state.all = [...state.all.filter(({ id }) => id !== action.payload.id)];
+    },
+    [updateCar.fulfilled]: (state, action) => {
+      const index = state.all.findIndex(
+        (car) => car.id === action.payload.id
+      );
+      state[index] = {
+        ...state[index],
+        ...action.payload,
+      };
     },
   },
 });
